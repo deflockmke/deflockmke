@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="generator" content="GrapesJS Studio"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./style.css">
+  </head>
+  <body class="gjs-t-body font-body page-body"><div class="page-wrapper" id="i8eocaq"><header class="site-header"><div class="header-container" id="i5wsci"><img src="https://cdn.grapesjs.com/workspaces/cmtib88uj56y0r1of6hgdwlik/assets/83a4d165-1053-40d2-845e-b091fcca585f__deflockmilwaukee.png" id="ijx3i-3-2-2-2"/><div class="brand-group"></div><a href="##" class="brand-link" id="iknu3h"><div class="title-group"><span class="font-heading font-800 site-title" id="i56z28">DeFlock Milwaukee</span><span class="eyebrow-text" id="i0kvou"><span data-gs-mrk-fs="true" id="i4zswk">Get the Flock out of Milwaukee County</span></span></div></a><nav aria-label="Primary" class="primary-navigation" id="i2po3t"><a href="./index.html" id="iat8np" class="gjs-t-link navigation-tab">Home</a><a href="./maps.html" id="i8iz56" class="gjs-t-link navigation-tab">Maps</a><a href="./open-records.html" id="imw4se" class="gjs-t-link navigation-tab">Open Records</a><a href="./news.html" id="ibylx2" class="gjs-t-link navigation-tab">News</a><a href="./events.html" id="i2w8y-2-2-2-2" class="gjs-t-link navigation-tab gjs-t-button">Events</a><a href="https://deflock.org/" id="i9e1h-2-2-2-2" class="gjs-t-link navigation-tab">DeFlock.org</a></nav></div></header><main class="main-content" id="iq6pgff"><h1 id="if6nazr"><meta http-equiv="content-type" content="text/html; charset=utf-8"/><title>&lt;br/&gt;</title><meta name="generator" content="LibreOffice 25.8.5.2 (Linux)"/><p id="i13nxmz"></p></h1><section data-js="calendar-widget" class="calendar-section gjs-t-border" id="i544u9q"><div class="calendar-intro"><h2 class="calendar-title gjs-t-h2" id="in72ly3">Stay updated on public info sessions, town halls, and organizing events</h2><p class="calendar-text" id="ibxeimh">Should display a public view of my proton calendar, for which I will share edit privileges with members of the organizing team.</p><div class="calendar-actions"></div></div><div class="calendar-shell"><div class="calendar-main" id="iz2rcn2"><div class="calendar-toolbar" id="i97osbw"><div data-js="calendar-month-label" class="calendar-month">Loading calendar…</div><div class="calendar-nav"><button type="button" aria-label="Previous month" data-js="calendar-prev"><img src="https://api.iconify.design/lucide-chevron-left.svg?color=%230f172a" alt="Previous month"/></button><button type="button" aria-label="Next month" data-js="calendar-next"><img src="https://api.iconify.design/lucide-chevron-right.svg?color=%230f172a" alt="Next month"/></button></div></div><div data-js="calendar-grid" class="calendar-grid"></div><div class="calendar-legend"></div></div><aside class="calendar-side"><div class="calendar-side-card"><h3 class="calendar-side-title">Upcoming events</h3><p class="calendar-side-text">The next items from the public calendar are listed here for quick access.</p><div data-js="calendar-list" class="calendar-list"><div class="calendar-list-item"><div class="calendar-list-date">Loading</div><div class="calendar-list-name">Fetching upcoming events from the calendar feed…</div><div class="calendar-list-meta">Please wait a moment.</div></div></div></div><div class="calendar-side-card"><h3 class="calendar-side-title">Calendar feed</h3><p class="calendar-side-text">Use this public ICS link in Proton Calendar, Apple Calendar, Google Calendar, Outlook, or most scheduling apps.</p><div class="calendar-feed"><div class="calendar-feed-label">Public ICS URL</div><a href="https://calendar.proton.me/api/calendar/v1/url/WNTl_CDI10oEGuU7TxBe8-2YHLbL30Zow6T7EA7YrHQuXkq4XQOC3XLzmKvRQNLlEGEBtInQjrrfU8q5JqJsrA==/calendar.ics?CacheKey=AJ5NiQYTv9_jv1oI_4jhBQ%3D%3D&amp;PassphraseKey=LqCyjfw10MnyPY2EdgLNFKeTgiX2FnTH-fLbVWZjUWo%3D" target="_blank" rel="noopener noreferrer" class="calendar-feed-link gjs-t-link">https://calendar.proton.me/api/calendar/v1/url/.../calendar.ics</a></div></div></aside></div></section><script data-scope="calendar-widget">
+(function(){
+  const root = document.querySelector('[data-js="calendar-widget"]');
+  if(!root) return;
+
+  const feedUrl = 'https://calendar.proton.me/api/calendar/v1/url/WNTl_CDI10oEGuU7TxBe8-2YHLbL30Zow6T7EA7YrHQuXkq4XQOC3XLzmKvRQNLlEGEBtInQjrrfU8q5JqJsrA==/calendar.ics?CacheKey=AJ5NiQYTv9_jv1oI_4jhBQ%3D%3D&PassphraseKey=LqCyjfw10MnyPY2EdgLNFKeTgiX2FnTH-fLbVWZjUWo%3D';
+  const monthLabel = root.querySelector('[data-js="calendar-month-label"]');
+  const grid = root.querySelector('[data-js="calendar-grid"]');
+  const list = root.querySelector('[data-js="calendar-list"]');
+  const status = root.querySelector('[data-js="calendar-status"]');
+  const prev = root.querySelector('[data-js="calendar-prev"]');
+  const next = root.querySelector('[data-js="calendar-next"]');
+
+  let currentMonth = new Date();
+  currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1);
+  let events = [];
+
+  function escapeHtml(str){
+    return String(str || '').replace(/[&<>"']/g, function(m){
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m];
+    });
+  }
+
+  function unfoldICS(text){
+    return text.replace(/\r?\n[ \t]/g, '');
+  }
+
+  function parseICSDate(value){
+    if(!value) return null;
+    const clean = value.trim();
+    if(/^\d{8}$/.test(clean)){
+      const y = parseInt(clean.slice(0,4),10);
+      const m = parseInt(clean.slice(4,6),10) - 1;
+      const d = parseInt(clean.slice(6,8),10);
+      return new Date(y,m,d);
+    }
+    if(/^\d{8}T\d{6}Z$/.test(clean)){
+      const y = parseInt(clean.slice(0,4),10);
+      const m = parseInt(clean.slice(4,6),10) - 1;
+      const d = parseInt(clean.slice(6,8),10);
+      const h = parseInt(clean.slice(9,11),10);
+      const min = parseInt(clean.slice(11,13),10);
+      const s = parseInt(clean.slice(13,15),10);
+      return new Date(Date.UTC(y,m,d,h,min,s));
+    }
+    if(/^\d{8}T\d{6}$/.test(clean)){
+      const y = parseInt(clean.slice(0,4),10);
+      const m = parseInt(clean.slice(4,6),10) - 1;
+      const d = parseInt(clean.slice(6,8),10);
+      const h = parseInt(clean.slice(9,11),10);
+      const min = parseInt(clean.slice(11,13),10);
+      const s = parseInt(clean.slice(13,15),10);
+      return new Date(y,m,d,h,min,s);
+    }
+    const dt = new Date(clean);
+    return isNaN(dt.getTime()) ? null : dt;
+  }
+
+  function parseICS(text){
+    const lines = unfoldICS(text).split(/\r?\n/);
+    const items = [];
+    let current = null;
+
+    lines.forEach(function(line){
+      if(line === 'BEGIN:VEVENT'){
+        current = {};
+        return;
+      }
+      if(line === 'END:VEVENT'){
+        if(current) items.push(current);
+        current = null;
+        return;
+      }
+      if(!current) return;
+
+      const splitIndex = line.indexOf(':');
+      if(splitIndex === -1) return;
+      const rawKey = line.slice(0, splitIndex);
+      const value = line.slice(splitIndex + 1);
+      const key = rawKey.split(';')[0];
+
+      if(key === 'SUMMARY') current.summary = value.replace(/\\,/g, ',').replace(/\\n/g, ' ');
+      if(key === 'LOCATION') current.location = value.replace(/\\,/g, ',').replace(/\\n/g, ' ');
+      if(key === 'DESCRIPTION') current.description = value.replace(/\\n/g, ' ');
+      if(key === 'DTSTART') current.start = parseICSDate(value);
+      if(key === 'DTEND') current.end = parseICSDate(value);
+      if(key === 'URL') current.url = value;
+    });
+
+    return items.filter(function(item){
+      return item.start instanceof Date && !isNaN(item.start.getTime()) && item.summary;
+    }).sort(function(a,b){
+      return a.start - b.start;
+    });
+  }
+
+  function isSameDay(a,b){
+    return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+  }
+
+  function formatMonth(date){
+    return date.toLocaleDateString(undefined,{month:'long',year:'numeric'});
+  }
+
+  function formatListDate(date){
+    return date.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});
+  }
+
+  function formatTime(date){
+    const midnight = date.getHours() === 0 && date.getMinutes() === 0;
+    if(midnight) return 'All day';
+    return date.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
+  }
+
+  function eventsForDay(date){
+    return events.filter(function(item){
+      const start = new Date(item.start);
+      const end = item.end ? new Date(item.end) : new Date(item.start);
+      const dayStart = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
+      const dayEnd = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
+      return start <= dayEnd && end >= dayStart;
+    });
+  }
+
+  function renderGrid(){
+    monthLabel.textContent = formatMonth(currentMonth);
+    grid.innerHTML = '';
+
+    ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(function(day){
+      const el = document.createElement('div');
+      el.className = 'calendar-dow';
+      el.textContent = day;
+      grid.appendChild(el);
+    });
+
+    const firstDay = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1);
+    const startOffset = firstDay.getDay();
+    const startDate = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1 - startOffset);
+    const today = new Date();
+
+    for(let i = 0; i < 42; i++){
+      const date = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + i);
+      const dayEvents = eventsForDay(date);
+      const cell = document.createElement('div');
+      let cls = 'calendar-day';
+      if(date.getMonth() !== currentMonth.getMonth()) cls += ' calendar-day-muted';
+      if(isSameDay(date, today)) cls += ' calendar-day-today';
+      cell.className = cls;
+
+      const dateBadge = document.createElement('div');
+      dateBadge.className = 'calendar-date';
+      dateBadge.textContent = date.getDate();
+      cell.appendChild(dateBadge);
+
+      if(dayEvents.length){
+        dayEvents.slice(0,2).forEach(function(item, idx){
+          const eventEl = document.createElement('div');
+          eventEl.className = idx % 2 === 0 ? 'calendar-event' : 'calendar-event calendar-event-accent';
+          eventEl.textContent = item.summary;
+          eventEl.title = item.summary + ' • ' + formatTime(item.start) + (item.location ? ' • ' + item.location : '');
+          cell.appendChild(eventEl);
+        });
+        if(dayEvents.length > 2){
+          const more = document.createElement('div');
+          more.className = 'calendar-empty';
+          more.textContent = '+' + (dayEvents.length - 2) + ' more';
+          cell.appendChild(more);
+        }
+      } else {
+        const empty = document.createElement('div');
+        empty.className = 'calendar-empty';
+        empty.textContent = 'No events';
+        cell.appendChild(empty);
+      }
+
+      grid.appendChild(cell);
+    }
+  }
+
+  function renderList(){
+    const now = new Date();
+    const upcoming = events.filter(function(item){
+      return item.start >= new Date(now.getTime() - 24 * 60 * 60 * 1000);
+    }).slice(0,6);
+
+    if(!upcoming.length){
+      list.innerHTML = '<div class="calendar-list-item"><div class="calendar-list-date">No upcoming items</div><div class="calendar-list-name">The feed is active, but there are no future events yet.</div><div class="calendar-list-meta">Check back soon or subscribe to receive updates automatically.</div></div>';
+      return;
+    }
+
+    list.innerHTML = upcoming.map(function(item){
+      const meta = [formatTime(item.start), item.location].filter(Boolean).join(' • ');
+      const title = escapeHtml(item.summary);
+      const date = escapeHtml(formatListDate(item.start));
+      const details = escapeHtml(meta || 'Details will appear in your calendar app');
+      const hrefStart = item.url ? '<a class="gjs-t-link" href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener noreferrer">' : '';
+      const hrefEnd = item.url ? '</a>' : '';
+      return '<div class="calendar-list-item">' +
+        '<div class="calendar-list-date">' + date + '</div>' +
+        '<div class="calendar-list-name">' + hrefStart + title + hrefEnd + '</div>' +
+        '<div class="calendar-list-meta">' + details + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function setStatus(message){
+    status.textContent = message;
+  }
+
+  prev.addEventListener('click', function(){
+    currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1);
+    renderGrid();
+  });
+
+  next.addEventListener('click', function(){
+    currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1);
+    renderGrid();
+  });
+
+  fetch(feedUrl)
+    .then(function(res){
+      if(!res.ok) throw new Error('Feed request failed');
+      return res.text();
+    })
+    .then(function(text){
+      events = parseICS(text);
+      renderGrid();
+      renderList();
+      if(events.length){
+        setStatus('Live calendar loaded successfully. Browse months to view scheduled community events.');
+      } else {
+        setStatus('The feed loaded, but no events were found yet. Use the subscription link to stay informed.');
+      }
+    })
+    .catch(function(){
+      renderGrid();
+      renderList();
+      setStatus('The live feed could not be loaded in this browser. Please use the buttons above to open or subscribe to the public calendar directly.');
+    });
+
+  renderGrid();
+})();
+</script></main></div></body>
+</html>
